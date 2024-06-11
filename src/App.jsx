@@ -4,8 +4,10 @@ import Login from './pages/Login'
 import Welcome from './pages/Welcome'
 import Home from './pages/Home'
 import Header from './components/Header/Header'
+import { useState } from 'react'
 
 function App() {
+  const [activeProfile, setActiveProfile] = useState(null);
 
   return (
     <>
@@ -18,11 +20,11 @@ function App() {
           <Login/>
         </Route>
         <Route path="/welcome">
-          <Welcome/>
+          <Welcome setActiveProfile={setActiveProfile}/>
         </Route>
         <Route  path="/home">
-          <Header/>
-          <Home/>
+          <Header activeProfile={activeProfile}/>
+          <Home activeProfile={activeProfile}/>
         </Route>
       </Switch>
       <div className='dev-navigation'>
