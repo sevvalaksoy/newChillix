@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 import {profilesData} from "../../Profiles"
 import styled from "styled-components"
@@ -10,8 +11,8 @@ justify-content: center;
 `
 
 export default function Profiles (props){
+    const [profiles] = useState(profilesData);
     const {setActiveProfile} = props;
-    const [profiles] = useState(profilesData)
 
     return (
         <div>

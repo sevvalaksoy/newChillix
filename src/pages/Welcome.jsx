@@ -10,10 +10,10 @@ display: inline-block;
 
 export default function Welcome (){
     return(
-        <div>
-            <h1>Who's Watching?</h1>
-            <Profiles/>
+        <>
+            <h1>Who is Watching?</h1> 
+            <Profiles />
             <Button>Manage Profiles</Button>
-        </div>
+        </>
     )
 }
