@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
-import {profilesData} from "../../Profiles"
+import {profilesData} from "../../Profiles.js"
 import styled from "styled-components"
 import Profile from "./Profile"
 
 const ProfilesContainer = styled.div`
 display: flex;
-gap: 1 rem;
+gap: 2 rem;
 justify-content: center;
 `
 
@@ -14,8 +14,7 @@ export default function Profiles (props){
     const [profiles] = useState(profilesData);
     const {setActiveProfile} = props;
 
-    return (
-        <div>
+     return (
             <ProfilesContainer>
                 {
                     profiles.map((profile)=>{
@@ -23,6 +22,5 @@ export default function Profiles (props){
                     })
                 }
             </ProfilesContainer>
-        </div>
     )
 }

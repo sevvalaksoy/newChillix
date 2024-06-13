@@ -1,4 +1,4 @@
-import { Link, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min'
+import { Link, Route, Switch } from 'react-router-dom'
 import './App.css'
 import Login from './pages/Login'
 import Welcome from './pages/Welcome'
@@ -15,14 +15,14 @@ function App() {
         <Route path="/" exact>
           <h1>Welcome to Chillix</h1>
         </Route>
-        <Route path="/login">
+        <Route path="/login" exact>
           <Header/>
           <Login/>
         </Route>
-        <Route path="/welcome">
+        <Route path="/welcome" exact>
           <Welcome setActiveProfile={setActiveProfile}/>
         </Route>
-        <Route  path="/home">
+        <Route  path="/home" exact>
           <Header activeProfile={activeProfile}/>
           <Home activeProfile={activeProfile}/>
         </Route>

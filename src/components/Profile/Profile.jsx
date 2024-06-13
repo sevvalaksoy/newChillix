@@ -5,18 +5,27 @@ import styled from "styled-components";
 const Card = styled.div`
 width: 20%;
 max-width: 200px;
+padding: 1.5rem;
+cursor: pointer;
+&:hover h2 {
+    color: white;
+}
+&:hover img{
+    border: 2px solid white;
+}
 `
 
 const Avatar = styled.img`
 width: 100%;
 border-radius: 0.2rem;
 `
+
 const Name = styled.h2`
 color: gray;
 text-align: center;
 `
 
-export default function Profile ({props}){
+export default function Profile (props){
 const {profile, setActiveProfile} = props;
 const {name, avatar} = profile;
 
@@ -30,11 +39,9 @@ const activeProfileHandler = () => {
 }
 
     return(
-        <div>
             <Card onClick={activeProfileHandler}>
                 <Avatar src={avatar}/>
                 <Name>{name}</Name>
             </Card>
-        </div>
     )
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Profiles from "../components/Profile/Profiles";
 import styled from "styled-components";
 
@@ -8,12 +9,14 @@ border: 1px solid gray;
 display: inline-block;
 `
 
-export default function Welcome (){
+export default function Welcome (props){
+    const{setActiveProfile} =props;
+    
     return(
-        <>
-            <h1>Who is Watching?</h1> 
-            <Profiles />
+        <div>
+            <h1>Who's Watching?</h1>
+            <Profiles setActiveProfile={setActiveProfile}/>
             <Button>Manage Profiles</Button>
-        </>
+        </div>
     )
 }
