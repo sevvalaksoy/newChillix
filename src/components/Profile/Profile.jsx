@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const Card = styled.div`
-width: 20%;
+width: 10%;
 max-width: 200px;
 padding: 1.5rem;
 cursor: pointer;

@@ -6,7 +6,8 @@ import axios from "axios";
 
 const Card = styled.div`
 padding: 1rem;
-width: 100vw;
+width: 100%;
+overflow: scroll;
 `
 
 const Title = styled.h2`
@@ -36,8 +37,8 @@ export default function Suggestion (props){
           }})
         .then((response)=>{
             console.log(response.data);
-            const random = Math.floor(Math.random()*response.data.movies.length-6);
-            setMovies(response.data.movies.slice(random,random+6));
+            const random = Math.floor(Math.random()*response.data.movies.length-11);
+            setMovies(response.data.movies.slice(random,random+11));
         })
         .catch((error)=>{
             console.warn(error);

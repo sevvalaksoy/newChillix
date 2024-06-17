@@ -4,6 +4,7 @@ import Movie from "./Movie";
 const Card = styled.div`
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
 `
 
 export default function Movies (props){

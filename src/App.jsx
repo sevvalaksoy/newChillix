@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Header from './components/Header/Header'
 import { useState } from 'react'
 
+
 function App() {
   const [activeProfile, setActiveProfile] = useState(null);
 
@@ -13,10 +14,14 @@ function App() {
     <>
       <Switch>
         <Route path="/" exact>
-          <h1>Welcome to Chillix</h1>
+          <Header activeProfile={activeProfile}/>
+          <div style={{display:"inline-block", alignContent:"center", textAlign:"center", margin:"10rem"}}>
+            <h1>Unlimited movies, TV shows, and more</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <h2>Ready to watch? Enter your email to create or restart your membership.</h2>
+          </div>
         </Route>
         <Route path="/login" exact>
-          <Header/>
           <Login/>
         </Route>
         <Route path="/welcome" exact>
@@ -29,7 +34,7 @@ function App() {
       </Switch>
       <div className='dev-navigation'>
         <Link to="/">HomePage</Link>
-        <Link to="/login">Login</Link>
+        <Link to="/login" data-cy="route-login">Login</Link>
         <Link to="/welcome">Welcome</Link>
         <Link to="/home">Home</Link>
       </div>
